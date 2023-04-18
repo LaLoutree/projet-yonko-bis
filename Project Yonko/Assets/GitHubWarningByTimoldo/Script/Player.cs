@@ -22,6 +22,9 @@ public class Player : MonoBehaviour
     [SerializeField] public int MaxHealth;
     [SerializeField] public int MaxShield;
     [SerializeField] public int Money;
+    public Quest quest;
+    public bool haveQuest;
+    public bool questAvailable = true;
     public HealthBar HealthBar;
     public ShieldBar ShieldBar;
     public TMP_Text TextMoney;
