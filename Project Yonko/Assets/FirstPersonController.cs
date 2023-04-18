@@ -50,6 +50,8 @@ public class FirstPersonController : MonoBehaviour
     private Vector3 moveDirection;
     private Vector2 currentInput;
 
+    private Animator Playanimator;
+
     private float rotationX = 0;
     // Start is called before the first frame update
     void Awake()
@@ -58,6 +60,7 @@ public class FirstPersonController : MonoBehaviour
         characterController = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        Playanimator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -80,10 +83,14 @@ public class FirstPersonController : MonoBehaviour
 
     private void HandleMovementInput()
     {
-        currentInput = new Vector2((isCrouching ? crouchSpeed : IsSprinting ? sprintSpeed : walkSpeed) * Input.GetAxis("Vertical"), (IsSprinting ? sprintSpeed : walkSpeed) * Input.GetAxis("Horizontal"));
+        float speed = (isCrouching ? crouchSpeed : IsSprinting ? sprintSpeed : walkSpeed) * Input.GetAxis("Vertical");
+        float sizeSpeed = (IsSprinting ? sprintSpeed : walkSpeed) * Input.GetAxis("Horizontal");
+        currentInput = new Vector2(speed, sizeSpeed);
         float moveDirectionY = moveDirection.y;
         moveDirection = (transform.TransformDirection(Vector3.forward) * currentInput.x) + (transform.TransformDirection(Vector3.right) * currentInput.y);
         moveDirection.y = moveDirectionY;
+        Playanimator.SetFloat("Speed", speed);
+        Playanimator.SetFloat("SizeSpeed", sizeSpeed);
     }
 
     private void HandleMouseLook()
@@ -97,13 +104,19 @@ public class FirstPersonController : MonoBehaviour
     private void HandleJump()
     {
         if (ShouldJump)
+        {
             moveDirection.y = jumpForce;
+            Playanimator.SetTrigger("Jump");
+        }
     }
 
     private void HandleCrouch()
     {
         if (ShouldCrouch)
+        {
             StartCoroutine(CrouchStand());
+            Playanimator.SetTrigger("Sneak");
+        }
     }
 
     private void ApplyFinalMovement()
