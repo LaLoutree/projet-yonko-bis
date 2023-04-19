@@ -9,6 +9,7 @@ public class FirstPersonController : MonoBehaviour
     private bool IsSprinting => canSprint && Input.GetKey(sprintKey);
     private bool ShouldJump => Input.GetKeyDown(jumpKey) && characterController.isGrounded;
     private bool ShouldCrouch => Input.GetKeyDown(crouchKey) && !duringCrouchAnimation && characterController.isGrounded;
+    private bool UseKnife => Input.GetKeyDown(KeyCode.P);
 
     [Header("Functionnal Options")]
     [SerializeField] private bool canSprint = true;
@@ -76,6 +77,8 @@ public class FirstPersonController : MonoBehaviour
             
             if (canCrouch)
                 HandleCrouch();
+            
+            HandleUseKnife();//Uniquement graphique si qst ==> Timoldo
 
             ApplyFinalMovement();
         }
@@ -116,6 +119,14 @@ public class FirstPersonController : MonoBehaviour
         {
             StartCoroutine(CrouchStand());
             Playanimator.SetTrigger("Sneak");
+        }
+    }
+
+    private void HandleUseKnife()
+    {
+        if (UseKnife)
+        {
+            Playanimator.SetTrigger("UseKnife");
         }
     }
 
