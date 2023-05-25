@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
-public class FirstPersonController : MonoBehaviour
+public class FirstPersonController : MonoBehaviourPunCallbacks
 {
     public bool canMove {get; private set;} = true;
 
@@ -67,21 +68,24 @@ public class FirstPersonController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (canMove)
+        if (photonView.IsMine)
         {
-            HandleMovementInput();
-            HandleMouseLook();
+            if (canMove)
+            {
+                HandleMovementInput();
+                HandleMouseLook();
 
-            if (canJump)
-                HandleJump();
-            
-            if (canCrouch)
-                HandleCrouch();
-            
-            HandleUseKnife();//Uniquement graphique si qst ==> Timoldo
+                if (canJump)
+                    HandleJump();
 
-            ApplyFinalMovement();
-        }
+                if (canCrouch)
+                    HandleCrouch();
+
+                HandleUseKnife();//Uniquement graphique si qst ==> Timoldo
+
+                ApplyFinalMovement();
+            }
+        }   
     }
 
     private void HandleMovementInput()

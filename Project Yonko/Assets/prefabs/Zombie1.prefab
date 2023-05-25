@@ -1723,6 +1723,8 @@ GameObject:
   - component: {fileID: 7389507112651452681}
   - component: {fileID: 3370296885033871228}
   - component: {fileID: -7044096594981772594}
+  - component: {fileID: -381020926954619626}
+  - component: {fileID: -3539816529946375652}
   m_Layer: 0
   m_Name: Zombie1
   m_TagString: Untagged
@@ -1814,18 +1816,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68bc061b6f2d4c04188f2ee72cb3630d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 5096509568290043963, guid: 4a146002c5d686a46b5bf5ff5c9b2072, type: 3}
   agent: {fileID: 3370296885033871228}
-  detectionRayon: 0
+  detectionRayon: 5
   MaxHealth: 100
   curentHealth: 0
-  attaqueRayon: 0
-  attaqueDelay: 0
-  Damage: 0
-  wanderingTimeWaitMin: 0
-  wanderingTimeWaitMax: 0
-  wanderingDistanceMin: 0
-  wanderingDistanceMax: 0
+  attaqueRayon: 1
+  attaqueDelay: 2
+  Damage: 20
+  wanderingTimeWaitMin: 2
+  wanderingTimeWaitMax: 5
+  wanderingDistanceMin: 3
+  wanderingDistanceMax: 6
+--- !u!54 &-381020926954619626
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4493914613880827488}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &-3539816529946375652
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4493914613880827488}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4710940672626480558
 GameObject:
   m_ObjectHideFlags: 0

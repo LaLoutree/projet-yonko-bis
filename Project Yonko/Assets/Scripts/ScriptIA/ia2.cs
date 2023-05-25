@@ -58,7 +58,7 @@ public class ia2 : MonoBehaviour
         }
         else
         {
-            if (agent.remainingDistance < 0.75f && !balade)
+            if (!balade)
             {
                 StartCoroutine(GetNewDestination());
             }
