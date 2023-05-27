@@ -12,17 +12,17 @@ public class GameManager : MonoBehaviourPunCallbacks
 
     void Start()
     {
-        PhotonNetwork.Instantiate(this.playerPrefab.name, new Vector3(150,1,170), Quaternion.identity, 0);
+        PhotonNetwork.Instantiate(this.playerPrefab.name, new Vector3(130,1,170), Quaternion.identity, 0);
     }
 
     public void OnPlayerEnterRoom(Player other)
     {
-        print(other.Username + " s'est connecté");
+        print(other.Username + " s'est connectï¿½");
     }
 
     public void OnPlayerLeftRoom(Player other)
     {
-        print(other.Username + " s'est déconnecté");
+        print(other.Username + " s'est dï¿½connectï¿½");
     }
 
     public void OnLeftRoom()

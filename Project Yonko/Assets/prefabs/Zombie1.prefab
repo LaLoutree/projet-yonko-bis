@@ -1816,7 +1816,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68bc061b6f2d4c04188f2ee72cb3630d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 5096509568290043963, guid: 4a146002c5d686a46b5bf5ff5c9b2072, type: 3}
+  player: {fileID: 1300585920277646795, guid: 4a146002c5d686a46b5bf5ff5c9b2072, type: 3}
+  playerDamage: {fileID: -2258482221854942534, guid: 4a146002c5d686a46b5bf5ff5c9b2072, type: 3}
   agent: {fileID: 3370296885033871228}
   detectionRayon: 5
   MaxHealth: 100

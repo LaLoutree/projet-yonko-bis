@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class QuestGiverTrigger : QuestGiver
 {
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(UnityEngine.Collider other)
     {
         if (other.tag == "Player" && Input.GetKey(KeyCode.F))
         {
