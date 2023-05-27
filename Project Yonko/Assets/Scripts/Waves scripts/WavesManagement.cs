@@ -9,6 +9,7 @@ public class WavesManagement : MonoBehaviour
     [SerializeField] private GameObject Endingdefaite;
     [SerializeField] public float zombie_number = 15f;
     [SerializeField] public int zombieRemains = 0;
+    [SerializeField] private Player player;
     public int round = 0;
     public Transform[] zombieSpawnsLocation;
     private float TimeBetweenWaves = 5f;

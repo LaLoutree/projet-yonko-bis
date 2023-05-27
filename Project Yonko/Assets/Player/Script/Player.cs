@@ -85,16 +85,16 @@ public class Player : MonoBehaviour
 
     void Update() //Test la barre de vie
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.T))
         {
             TakeDamage(75);
             Money += 10;
         }
-        
-        TextMoney.SetText("Money : " + Money);
+        if (TextMoney != null)
+            TextMoney.SetText("Money : " + Money);
     }
 
-    void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         Shield -= damage;
         if (Shield < 0)

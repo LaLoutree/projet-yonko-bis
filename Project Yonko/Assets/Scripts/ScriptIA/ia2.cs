@@ -9,9 +9,10 @@ public class ia2 : MonoBehaviour
 {
     [Header("References")] [SerializeField]
     private Transform player;
+    [SerializeField] private Player playerDamage;
 
     [SerializeField] private NavMeshAgent agent;
-    //[SerializeField] private PLayer playerstats;
+   
 
     [Header("Stats")] [SerializeField] private float detectionRayon;
     [SerializeField] private float MaxHealth = 100f;
@@ -20,7 +21,7 @@ public class ia2 : MonoBehaviour
 
     [SerializeField] private float attaqueRayon;
     [SerializeField] private float attaqueDelay;
-    [SerializeField] private float Damage;
+    [SerializeField] private int Damage;
 
 
     [Header("Wandering parameters")] [SerializeField]
@@ -87,7 +88,7 @@ public class ia2 : MonoBehaviour
     {
         IsAtacking = true;
         agent.isStopped = true;
-        // Player.TakeDamage(damage)
+        playerDamage.TakeDamage(Damage);
 
         yield return new WaitForSeconds(attaqueDelay);
         agent.isStopped = false;
@@ -102,7 +103,7 @@ public class ia2 : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, attaqueRayon);
     }
 
-    public void TakeDamage(float degats)
+    public void TakeDamage2(float degats)
     {
         curentHealth -= degats;
     }
