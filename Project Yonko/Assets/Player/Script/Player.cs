@@ -90,11 +90,9 @@ public class Player : MonoBehaviour
 
     void Update() //Test la barre de vie
     {
-        if (TextMoney != null)
-            TextMoney.SetText("Money : " + Money);
         if (Input.GetKeyDown(KeyCode.K))
         {
-            Money += 10000;
+            WinMoney(10000);
         }
     }
 
@@ -129,18 +127,25 @@ public class Player : MonoBehaviour
     {
         HealthBar.SetHealth(0);
         ShieldBar.SetShield(0);
+
         // Respawn ??
         // New scene ??
     }
 
     void UseMoney(int price)
     {
-        Money -= price;
+        if (price <= Money)
+        {
+            Money -= price;
+            TextMoney.SetText("Money : " + Money);
+        }
     }
 
     void WinMoney(int income)
     {
         Money += income;
+        if (TextMoney != null)
+            TextMoney.SetText("Money : " + Money);
     }
 }
 

@@ -20,11 +20,11 @@ public class WavesManagement : MonoBehaviour
     [SerializeField] public List<Player> alivePlayers = new List<Player>();
     void Update()
     {
-        if (alivePlayers.Count == 0)
+        /*if (alivePlayers.Count == 0)
         {
             Endingdefaite.SetActive(true);
             return;
-        }
+        }*/
         if (zombieRemains <= 0)
         {
             if (countdown <= 0)
