@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WavesManagement : MonoBehaviour
 {
+    [SerializeField] private GameObject Endingdefaite;
     [SerializeField] public float zombie_number = 15f;
     [SerializeField] public int zombieRemains = 0;
     [SerializeField] private Player player;
@@ -18,6 +20,11 @@ public class WavesManagement : MonoBehaviour
     [SerializeField] public List<Player> alivePlayers = new List<Player>();
     void Update()
     {
+        if (alivePlayers.Count == 0)
+        {
+            Endingdefaite.SetActive(true);
+            return;
+        }
         if (zombieRemains <= 0)
         {
             if (countdown <= 0)
