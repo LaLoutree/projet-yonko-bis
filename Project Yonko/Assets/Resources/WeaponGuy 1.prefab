@@ -1776,6 +1776,7 @@ GameObject:
   - component: {fileID: 131400511724767947}
   - component: {fileID: 3657476525634221892}
   - component: {fileID: 8719950868178824547}
+  - component: {fileID: -5528099224254709685}
   m_Layer: 0
   m_Name: WeaponGuy 1
   m_TagString: Player
@@ -1973,6 +1974,22 @@ MonoBehaviour:
   m_SynchronizeLayers:
   - SynchronizeType: 0
     LayerIndex: 0
+--- !u!114 &-5528099224254709685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 425345359715803728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fe49aea73a5c1a468e092f9fbea6a9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  primaryWeapon: {fileID: 11400000, guid: 68aef27c25e82d14db8cf684b7c33b3e, type: 2}
+  secondaryWeapon: {fileID: 11400000, guid: 57fe0d587bc7d5343910d09037d388bb, type: 2}
+  w1: 0
+  w2: 0
 --- !u!1 &425345359725829210
 GameObject:
   m_ObjectHideFlags: 0

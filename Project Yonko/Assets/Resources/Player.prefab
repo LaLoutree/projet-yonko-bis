@@ -2062,6 +2062,7 @@ GameObject:
   - component: {fileID: 2678035239569152221}
   - component: {fileID: 7991848938503586554}
   - component: {fileID: -2258482221854942534}
+  - component: {fileID: -6363042557660125409}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2273,7 +2274,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsAlive: 0
   Shield: 0
-  Health: -20
+  Health: -40
   Speed: 0
   Strength: 0
   Discretion: 0
@@ -2292,6 +2293,27 @@ MonoBehaviour:
   HealthBar: {fileID: 0}
   ShieldBar: {fileID: 0}
   TextMoney: {fileID: 0}
+  weapon1: 0
+  weapon2: 0
+  weapon3: 0
+  content: []
+--- !u!114 &-6363042557660125409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1300585920277646793}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fe49aea73a5c1a468e092f9fbea6a9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  primaryWeapon: {fileID: 11400000, guid: 68aef27c25e82d14db8cf684b7c33b3e, type: 2}
+  ren1: {fileID: 0}
+  secondaryWeapon: {fileID: 11400000, guid: 57fe0d587bc7d5343910d09037d388bb, type: 2}
+  w1: 0
+  w2: 0
 --- !u!1 &1300585920309703619
 GameObject:
   m_ObjectHideFlags: 0

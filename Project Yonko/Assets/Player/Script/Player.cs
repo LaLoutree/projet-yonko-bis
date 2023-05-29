@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System;
+using System.Collections.Generic;
 using TMPro;
 
 public class Player : MonoBehaviour
@@ -28,6 +29,10 @@ public class Player : MonoBehaviour
     public HealthBar HealthBar;
     public ShieldBar ShieldBar;
     public TMP_Text TextMoney;
+    public bool weapon1;
+    public bool weapon2;
+    public bool weapon3;
+    public List<GameObject> content = new List<GameObject>();
 
 
     Player(string type, string username) //Creer un personnage en prenant son type (nos 4 persos)
@@ -85,13 +90,12 @@ public class Player : MonoBehaviour
 
     void Update() //Test la barre de vie
     {
-        if(Input.GetKeyDown(KeyCode.T))
-        {
-            TakeDamage(75);
-            Money += 10;
-        }
         if (TextMoney != null)
             TextMoney.SetText("Money : " + Money);
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            Money += 10000;
+        }
     }
 
     public void TakeDamage(int damage)

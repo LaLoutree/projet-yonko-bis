@@ -11,7 +11,7 @@ public class Débris : MonoBehaviour
 
         if (dist <= 1.9f)
         {
-            if (Input.GetKey(KeyCode.F) && player.Money >= 1000)
+            if (Input.GetKeyDown(KeyCode.F) && player.Money >= 1000)
             {
                 player.Money -= 1000;
                 Destroy(gameObject);
