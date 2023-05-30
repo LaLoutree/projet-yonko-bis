@@ -9,15 +9,15 @@ public class WavesManagement : MonoBehaviour
     [SerializeField] private GameObject Endingdefaite;
     [SerializeField] public float zombie_number = 15f;
     [SerializeField] public int zombieRemains = 0;
-    [SerializeField] private Player player;
+    [SerializeField] private Joueur player;
     public int round = 0;
     public Transform[] zombieSpawnsLocation;
     private float TimeBetweenWaves = 5f;
     private float countdown = 5f;
     private float multiplier = 1;
     public GameObject zombie;
-    [SerializeField] public List<Player> deadPlayers = new List<Player>();
-    [SerializeField] public List<Player> alivePlayers = new List<Player>();
+    [SerializeField] public List<Joueur> deadPlayers = new List<Joueur>();
+    [SerializeField] public List<Joueur> alivePlayers = new List<Joueur>();
     void Update()
     {
         /*if (alivePlayers.Count == 0)
@@ -68,9 +68,9 @@ public class WavesManagement : MonoBehaviour
         }
     }
 
-    void RespawnDeadPlayers(List<Player> deadPlayer)
+    void RespawnDeadPlayers(List<Joueur> deadPlayer)
     {
-        foreach (Player player in deadPlayer)
+        foreach (Joueur player in deadPlayer)
         {
             Vector3 spawnPoint = new Vector3(165,1,135);
             player.transform.position = spawnPoint;

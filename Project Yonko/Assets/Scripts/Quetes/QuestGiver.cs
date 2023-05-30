@@ -7,7 +7,7 @@ using Random = System.Random;
 
 public class QuestGiver : QuestManager
 {
-    public Player Player;
+    public Joueur Player;
     public Quest[] Quests = new Quest[2];
     public Random Random;
 

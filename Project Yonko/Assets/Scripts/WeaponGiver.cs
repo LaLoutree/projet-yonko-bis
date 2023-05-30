@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WeaponGiver : MonoBehaviour
 {
-    [SerializeField] private Player player;
+    [SerializeField] private Joueur player;
 
     void Update()
     {

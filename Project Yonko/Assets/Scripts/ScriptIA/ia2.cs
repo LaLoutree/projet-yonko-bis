@@ -9,7 +9,7 @@ public class ia2 : MonoBehaviour
 {
     [Header("References")] [SerializeField]
     private Transform player;
-    [SerializeField] private Player playerDamage;
+    [SerializeField] private Joueur playerDamage;
 
     [SerializeField] private NavMeshAgent agent;
    

@@ -7,7 +7,7 @@ public class Quest : MonoBehaviour
 {
     public string Name;
     public GameObject Obj;
-    public Player Player;
+    public Joueur Player;
     public int ActualQuantity;
     public int QuantityToHave;
     public int Reward;

@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using Unity.VisualScripting;
 
 public class FirstPersonController : MonoBehaviourPunCallbacks
 {
@@ -53,9 +55,14 @@ public class FirstPersonController : MonoBehaviourPunCallbacks
     private Vector2 currentInput;
 
     private Animator Playanimator;
+    private Rigidbody RB;
+    private PhotonView PV;
 
     private float rotationX = 0;
     // Start is called before the first frame update
+
+
+
     void Awake()
     {
         playerCamera = GetComponentInChildren<Camera>();
@@ -63,12 +70,14 @@ public class FirstPersonController : MonoBehaviourPunCallbacks
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         Playanimator = GetComponent<Animator>();
+        RB = GetComponent<Rigidbody>();
+        PV = GetComponent<PhotonView>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (photonView.IsMine)
+        if (!PV.IsMine)
         {
             if (canMove)
             {

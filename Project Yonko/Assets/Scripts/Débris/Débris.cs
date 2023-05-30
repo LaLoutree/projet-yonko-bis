@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Débris : MonoBehaviour
 {
-    public Player player;
+    public Joueur player;
     void Update()
     {
         float dist = Vector3.Distance(gameObject.transform.position, player.transform.position);
